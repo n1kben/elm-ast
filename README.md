@@ -1,8 +1,10 @@
 # Elm AST for TypeScript
 
-This package is under development. It parses Elm module headers, imports, type aliases, unions, and type annotations into TypeScript values. It resolves types across project modules and installed package docs, including recursive types. It can also print generated declarations from a typed expression tree, adding imports for qualified references.
+This is a 0.1.0 preview. It parses Elm module headers, imports, type aliases, unions, and type annotations into TypeScript values. It resolves types across project modules and installed package docs, including recursive types. It can also print generated declarations from a typed expression tree, adding imports for qualified references.
 
-The parser keeps existing function bodies as source text. Generated function bodies are built from the expression AST and printed as Elm. `typeModuleFromParsed` copies parsed type declarations; it does not copy functions or comments. The writer covers the expressions needed by the current codec generator, not every Elm expression. Keep using the Elm compiler to check generated code. The package remains private while this API is developed.
+The parser keeps existing function bodies as source text. Generated function bodies are built from the expression AST and printed as Elm. `typeModuleFromParsed` copies parsed type declarations; it does not copy functions or comments. The writer covers the expressions needed by the current codec generator, not every Elm expression. Keep using the Elm compiler to check generated code. The API is still changing; check generated Elm with the Elm compiler.
+
+Install it with `npm install @n1kben/elm-ast effect`.
 
 ```ts
 import { parseModule } from "@n1kben/elm-ast";

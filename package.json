@@ -1,27 +1,45 @@
 {
   "name": "@n1kben/elm-ast",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "description": "Parse Elm modules and generate Elm source from typed ASTs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/n1kben/elm-ast.git"
   },
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "license": "BSD-3-Clause",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-    "./project": { "types": "./dist/project.d.ts", "default": "./dist/project.js" },
-    "./emit": { "types": "./dist/emit.d.ts", "default": "./dist/emit.js" },
-    "./type-graph": { "types": "./dist/type-graph.d.ts", "default": "./dist/type-graph.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./project": {
+      "types": "./dist/project.d.ts",
+      "default": "./dist/project.js"
+    },
+    "./emit": {
+      "types": "./dist/emit.d.ts",
+      "default": "./dist/emit.js"
+    },
+    "./type-graph": {
+      "types": "./dist/type-graph.d.ts",
+      "default": "./dist/type-graph.js"
+    }
   },
-  "files": ["dist/", "README.md", "LICENSE"],
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "test": "node --test test/*.test.ts",
     "typecheck": "tsc --project tsconfig.json --noEmit",
-    "lint": "oxlint ."
+    "lint": "oxlint .",
+    "prepack": "npm run build"
   },
   "dependencies": {
     "effect": "^3.22.2"
